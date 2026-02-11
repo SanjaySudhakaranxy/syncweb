@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="show-title">Show Detail | SYNC</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="config/tailwind.config.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body
+    class="bg-sync-background text-sync-text font-sans antialiased overflow-x-hidden selection:bg-sync-text selection:text-sync-background"
+  >
+    <!-- Navigation -->
+    <nav
+      id="main-nav"
+      class="fixed w-full z-50 top-0 pt-6 pb-6 px-6 lg:px-12 flex justify-between items-center transition-all duration-300"
+    >
+      <!-- Logo -->
+      <a href="index.html" class="z-50">
+        <img src="assets/sync_logo.png" alt="SYNC Logo" class="h-12" />
+      </a>
+
+      <!-- Desktop Menu -->
+      <div
+        class="hidden md:flex items-center space-x-8 font-header-nav text-sm tracking-widest"
+      >
+        <a
+          href="index.html#about"
+          class="hover:text-white transition-colors hover-underline"
+          >About</a
+        >
+        <a
+          href="tickets.html"
+          class="hover:text-white transition-colors hover-underline"
+          >Tickets</a
+        >
+        <a
+          href="shows.html"
+          class="hover:text-white transition-colors hover-underline"
+          >Shows</a
+        >
+        <a
+          href="beone.html"
+          class="hover:text-white transition-colors hover-underline"
+          >BeOne</a
+        >
+        <a
+          href="store.html"
+          class="hover:text-white transition-colors hover-underline"
+          >Store</a
+        >
+      </div>
+
+      <!-- Socials (Desktop) -->
+      <div
+        class="hidden md:flex items-center space-x-6 text-sync-text-secondary"
+      >
+        <a href="#" class="hover:text-white transition-colors"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden text-2xl z-50 focus:outline-none"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-black z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300"
+    >
+      <div
+        class="flex flex-col space-y-8 text-center font-header text-3xl tracking-widest"
+      >
+        <a href="index.html#about" class="mobile-link hover:text-gray-400"
+          >About</a
+        >
+        <a href="tickets.html" class="mobile-link hover:text-gray-400"
+          >Tickets</a
+        >
+        <a href="shows.html" class="mobile-link hover:text-gray-400">Shows</a>
+        <a href="beone.html" class="mobile-link hover:text-gray-400">BeOne</a>
+        <a href="store.html" class="mobile-link hover:text-gray-400">Store</a>
+      </div>
+    </div>
+
+    <!-- Show Detail Content -->
+    <main class="bg-sync-background">
+      <!-- Hero Section -->
+      <section class="relative h-screen flex items-end overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+          <img
+            id="hero-image"
+            src="assets/show1.jpg"
+            alt="Show Hero"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/20"
+          ></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 w-full px-6 md:px-12 pb-24">
+          <div class="max-w-7xl mx-auto">
+            <div class="fade-in-section">
+              <div class="font-body text-lg mb-4" id="hero-date">
+                DECEMBER 21, 2025
+              </div>
+              <h1
+                class="font-brand text-4xl md:text-6xl lg:text-7xl mb-6"
+                id="hero-title"
+              >
+                Ashes & Alter
+              </h1>
+              <div
+                class="flex flex-col md:flex-row md:items-center md:gap-8 font-body text-lg"
+              >
+                <div id="hero-city">Egmore, Chennai</div>
+                <div class="hidden md:block text-sync-text-secondary">•</div>
+                <div id="hero-venue">Phoenix Marketcity Arena</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Show Metadata Strip -->
+      <section class="py-12 bg-sync-surface border-b border-sync-border">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+          <div
+            class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-12 text-center md:text-left"
+          >
+            <div class="fade-in-section">
+              <div class="font-header text-sm mb-2">DATE</div>
+              <div class="font-body" id="meta-date">December 21, 2025</div>
+            </div>
+            <div class="fade-in-section">
+              <div class="font-header text-sm mb-2">VENUE</div>
+              <div class="font-body" id="meta-venue">Mukundha Studios</div>
+            </div>
+            <div class="fade-in-section">
+              <div class="font-header text-sm mb-2">CITY</div>
+              <div class="font-body" id="meta-city">Egmore, Chennai</div>
+            </div>
+            <div class="fade-in-section"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Show Story Section -->
+      <section class="py-24 px-6 md:px-12">
+        <div class="max-w-4xl mx-auto">
+          <!-- Story Content -->
+          <div class="fade-in-section">
+            <h2 class="font-header-section text-3xl md:text-4xl mb-8">
+              THE NIGHT
+            </h2>
+            <div
+              class="space-y-6 font-body text-lg leading-relaxed"
+              id="story-content"
+            >
+              <!-- Content will be loaded dynamically by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Photos Grid -->
+      <section class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img
+              src="assets/show1.jpg"
+              alt="Photo 1"
+              style="
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+              "
+            />
+            <img
+              src="assets/show2.jpg"
+              alt="Photo 2"
+              style="
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+              "
+            />
+            <img
+              src="assets/show3.jpg"
+              alt="Photo 3"
+              style="
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+              "
+            />
+            <img
+              src="assets/sync_bg.jpg"
+              alt="Photo 4"
+              style="
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+              "
+            />
+            <img
+              src="assets/show5.jpg"
+              alt="Photo 5"
+              style="
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+              "
+            />
+            <img
+              src="assets/show6.jpg"
+              alt="Photo 6"
+              style="
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+              "
+            />
+            <img
+              src="assets/show7.jpg"
+              alt="Photo 7"
+              style="
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+              "
+            />
+            <img
+              src="assets/show8.jpg"
+              alt="Photo 8"
+              style="
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+              "
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Navigation Section -->
+      <section class="py-16 bg-black border-t border-sync-border">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-8"
+          >
+            <!-- Previous Show -->
+            <button
+              class="flex items-center gap-4 font-header tracking-widest px-6 py-3 border border-sync-border rounded hover:border-white transition-colors duration-300"
+              onclick="navigateToShow('prev')"
+              id="prev-show-btn"
+            >
+              <i class="fas fa-chevron-left"></i>
+              <span>PREVIOUS SHOW</span>
+            </button>
+
+            <!-- Back to Shows -->
+            <a
+              href="shows.html"
+              class="font-header tracking-widest px-8 py-4 bg-white text-black rounded hover:bg-gray-200 transition-colors duration-300"
+            >
+              BACK TO SHOWS
+            </a>
+
+            <!-- Next Show -->
+            <button
+              class="flex items-center gap-4 font-header tracking-widest px-6 py-3 border border-sync-border rounded hover:border-white transition-colors duration-300"
+              onclick="navigateToShow('next')"
+              id="next-show-btn"
+            >
+              <span>NEXT SHOW</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-sync-surface border-t border-sync-border py-16 px-6">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-12"
+      >
+        <!-- Logo -->
+        <div class="text-center md:text-left">
+          <h3 class="font-header text-xl font-bold tracking-widest mb-4">
+            SYNC
+          </h3>
+          <p class="font-body text-sm">
+            &copy; 2024 SYNC.<br />All Rights Reserved.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div
+          class="flex flex-wrap justify-center md:justify-end gap-8 md:gap-16 font-header-nav text-xs"
+        >
+          <div class="flex flex-col space-y-4 text-center md:text-left">
+            <div class="flex space-x-4 text-lg">
+              <a href="#" class="hover:text-white transition-colors"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/scroll-animations.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/show-detail.js"></script>
+  </body>
+</html>

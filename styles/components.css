@@ -1,0 +1,50 @@
+/**
+ * Component-specific CSS Styles
+ * Contains styles for navigation, hover effects, and interactive elements
+ * Updated with new color scheme for 15:1 contrast ratio
+ */
+
+/* Navigation Transition Effects */
+#main-nav {
+  transition: padding 0.3s ease;
+}
+
+#main-nav.scrolled {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Hover Underline Animation */
+.hover-underline {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ffffff; /* sync-text for maximum contrast */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Size Selector Styles */
+.size-btn.selected {
+  border-color: #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.size-btn:active {
+  transform: scale(0.95);
+}

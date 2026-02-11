@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tickets | SYNC</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="config/tailwind.config.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body
+    class="bg-sync-background text-sync-text font-sans antialiased overflow-x-hidden selection:bg-sync-text selection:text-sync-background"
+  >
+    <!-- Navigation -->
+    <nav
+      id="main-nav"
+      class="fixed w-full z-50 top-0 pt-6 pb-6 px-6 lg:px-12 flex justify-between items-center transition-all duration-300"
+    >
+      <!-- Logo -->
+      <a href="index.html" class="z-50">
+        <img src="assets/sync_logo.png" alt="SYNC Logo" class="h-12" />
+      </a>
+
+      <!-- Desktop Menu -->
+      <div
+        class="hidden md:flex items-center space-x-8 font-header-nav text-sm tracking-widest"
+      >
+        <a
+          href="index.html#about"
+          class="hover:text-white transition-colors hover-underline"
+          >About</a
+        >
+        <a
+          href="tickets.html"
+          class="hover:text-white transition-colors hover-underline"
+          >Tickets</a
+        >
+        <a
+          href="shows.html"
+          class="hover:text-white transition-colors hover-underline"
+          >Shows</a
+        >
+        <a
+          href="beone.html"
+          class="hover:text-white transition-colors hover-underline"
+          >BeOne</a
+        >
+        <a
+          href="store.html"
+          class="hover:text-white transition-colors hover-underline"
+          >Store</a
+        >
+      </div>
+
+      <!-- Socials (Desktop) -->
+      <div
+        class="hidden md:flex items-center space-x-6 text-sync-text-secondary"
+      >
+        <a href="#" class="hover:text-white transition-colors"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden text-2xl z-50 focus:outline-none"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-black z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300"
+    >
+      <div
+        class="flex flex-col space-y-8 text-center font-header text-3xl tracking-widest"
+      >
+        <a href="index.html#about" class="mobile-link hover:text-gray-400"
+          >About</a
+        >
+        <a href="tickets.html" class="mobile-link hover:text-gray-400"
+          >Tickets</a
+        >
+        <a href="shows.html" class="mobile-link hover:text-gray-400">Shows</a>
+        <a href="beone.html" class="mobile-link hover:text-gray-400">BeOne</a>
+        <a href="store.html" class="mobile-link hover:text-gray-400">Store</a>
+      </div>
+    </div>
+
+    <!-- Tour Content -->
+    <main class="pt-32 pb-24 bg-sync-background min-h-screen">
+      <!-- Hero Section -->
+      <section class="px-6 md:px-12 mb-16">
+        <div class="max-w-6xl mx-auto text-center">
+          <h1
+            class="font-brand text-5xl md:text-7xl lg:text-8xl mb-6 fade-in-section"
+          >
+            SYNC Shows & Tickets
+          </h1>
+          <p
+            class="font-body text-lg md:text-xl max-w-2xl mx-auto leading-relaxed fade-in-section"
+          >
+            Join us for an unforgettable worship experience. One Spirit. One
+            Sound. One Hope.
+          </p>
+        </div>
+      </section>
+
+      <!-- Tour Dates Section -->
+      <section class="px-6 md:px-12">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header -->
+          <div class="text-center mb-12 fade-in-section">
+            <h2 class="font-header-section text-3xl md:text-4xl mb-4">
+              UPCOMING SHOWS
+            </h2>
+            <p class="font-body max-w-2xl mx-auto">
+              Experience SYNC live. Get your tickets now and be part of the
+              movement.
+            </p>
+          </div>
+
+          <!-- Tour List -->
+          <div class="space-y-6 md:space-y-8">
+            <!-- Show Card 1 -->
+            <div
+              class="bg-sync-surface border border-sync-border rounded-lg p-6 md:p-8 fade-in-section hover:border-sync-text-secondary transition-colors duration-300"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+              >
+                <!-- Event Info -->
+                <div class="flex-1">
+                  <div
+                    class="flex flex-col md:flex-row md:items-center md:gap-8 mb-4 md:mb-0"
+                  >
+                    <!-- Date -->
+                    <div class="mb-4 md:mb-0 md:w-32">
+                      <div
+                        class="font-header text-2xl md:text-3xl leading-none"
+                      >
+                        DEC
+                      </div>
+                      <div
+                        class="font-header text-4xl md:text-5xl leading-none"
+                      >
+                        21
+                      </div>
+                      <div class="font-body text-sm">2025</div>
+                    </div>
+
+                    <!-- Event Details -->
+                    <div class="flex-1">
+                      <h3 class="font-header text-xl md:text-2xl mb-2">
+                        Ashes and Alter
+                      </h3>
+                      <p class="font-body text-lg mb-2">
+                        Mukundha Studios - Egmore | Chennai
+                      </p>
+                      <p class="font-body text-sm">Show: 6:00 PM</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Ticket Button -->
+                <div class="flex-shrink-0">
+                  <button
+                    class="w-full md:w-auto bg-white text-black font-header tracking-widest px-8 py-4 rounded hover:bg-gray-200 transition-colors duration-300"
+                  >
+                    SOLD OUT
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter/Updates Section -->
+          <div
+            class="mt-16 text-center bg-sync-surface border border-sync-border rounded-lg p-8 fade-in-section"
+          >
+            <h3 class="font-header-section text-2xl mb-4">STAY UPDATED</h3>
+            <p class="font-body mb-6 max-w-2xl mx-auto">
+              Don't miss out on new tour dates and exclusive SYNC content. Be
+              the first to know about upcoming shows.
+            </p>
+            <button
+              class="bg-white text-black font-header tracking-widest px-8 py-4 rounded hover:bg-gray-200 transition-colors duration-300"
+            >
+              JOIN MAILING LIST
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-sync-surface border-t border-sync-border py-16 px-6">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-12"
+      >
+        <!-- Logo -->
+        <div class="text-center md:text-left">
+          <h3 class="font-header text-xl font-bold tracking-widest mb-4">
+            SYNC
+          </h3>
+          <p class="font-body text-sm">
+            &copy; 2024 SYNC.<br />All Rights Reserved.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div
+          class="flex flex-wrap justify-center md:justify-end gap-8 md:gap-16 font-header-nav text-xs"
+        >
+          <div class="flex flex-col space-y-4 text-center md:text-left">
+            <div class="flex space-x-4 text-lg">
+              <a href="#" class="hover:text-white transition-colors"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/scroll-animations.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
