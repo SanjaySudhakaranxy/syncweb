@@ -147,27 +147,16 @@
   .card {
     margin-bottom: 0.5rem;
   }
-
-  /* Mobile menu links visible and properly styled */
+  /* Mobile menu links - Forced render */
   .mobile-link {
     color: #ffffff !important;
     display: block !important;
-    font-size: 1.875rem !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.15em !important;
-    padding: 1rem !important;
+    opacity: 1 !important;
     min-height: 44px !important;
-    line-height: 1.5 !important;
-    font-weight: 500 !important;
   }
 
   .mobile-link:hover {
     color: #a3a3a3 !important;
-  }
-
-  /* Ensure mobile menu transitions properly */
-  #mobile-menu {
-    transition: opacity 0.3s duration-300 !important;
   }
 }
 

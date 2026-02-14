@@ -95,26 +95,27 @@
       </button>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Forced mobile nav render fix -->
+    <!-- Mobile Menu Overlay - Explicit render when open -->
     <div
       id="mobile-menu"
-      class="fixed inset-0 bg-black z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300"
+      class="hidden fixed inset-0 bg-black z-[9999] flex flex-col justify-center items-center md:hidden"
     >
       <div
-        class="flex flex-col space-y-6 sm:space-y-8 text-center font-header text-2xl sm:text-3xl tracking-widest"
+        class="flex flex-col space-y-6 sm:space-y-8 text-center font-header text-2xl sm:text-3xl tracking-widest text-white opacity-100"
       >
         <a
           href="#about"
           id="mobile-about-link"
-          class="mobile-link hover:text-gray-400"
+          class="mobile-link text-white opacity-100 hover:text-gray-400"
           >About</a
         >
-        <a href="tickets.html" class="mobile-link hover:text-gray-400"
+        <a href="tickets.html" class="mobile-link text-white opacity-100 hover:text-gray-400"
           >Tickets</a
         >
-        <a href="shows.html" class="mobile-link hover:text-gray-400">Shows</a>
-        <a href="beone.html" class="mobile-link hover:text-gray-400">BeOne</a>
-        <a href="store.html" class="mobile-link hover:text-gray-400">Store</a>
+        <a href="shows.html" class="mobile-link text-white opacity-100 hover:text-gray-400">Shows</a>
+        <a href="beone.html" class="mobile-link text-white opacity-100 hover:text-gray-400">BeOne</a>
+        <a href="store.html" class="mobile-link text-white opacity-100 hover:text-gray-400">Store</a>
       </div>
     </div>
 

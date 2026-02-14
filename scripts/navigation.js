@@ -93,7 +93,7 @@ function initializeNavbarScrollEffect() {
   });
 }
 
-// Mobile menu toggle functionality
+// Mobile menu toggle functionality - Force render
 function initializeMobileMenu() {
   const btn = document.getElementById("mobile-menu-btn");
   const menu = document.getElementById("mobile-menu");
@@ -103,16 +103,16 @@ function initializeMobileMenu() {
   const mobileLinks = document.querySelectorAll(".mobile-link");
   let isMenuOpen = false;
 
-  // Toggle mobile menu on button click
+  // Toggle mobile menu on button click - Use display toggle for forced render
   btn.addEventListener("click", () => {
     isMenuOpen = !isMenuOpen;
     if (isMenuOpen) {
-      menu.classList.remove("opacity-0", "pointer-events-none");
+      menu.classList.remove("hidden");
       icon.classList.remove("fa-bars");
       icon.classList.add("fa-times");
       document.body.style.overflow = "hidden";
     } else {
-      menu.classList.add("opacity-0", "pointer-events-none");
+      menu.classList.add("hidden");
       icon.classList.remove("fa-times");
       icon.classList.add("fa-bars");
       document.body.style.overflow = "auto";
@@ -123,7 +123,7 @@ function initializeMobileMenu() {
   mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
       isMenuOpen = false;
-      menu.classList.add("opacity-0", "pointer-events-none");
+      menu.classList.add("hidden");
       icon.classList.remove("fa-times");
       icon.classList.add("fa-bars");
       document.body.style.overflow = "auto";
