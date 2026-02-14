@@ -69,26 +69,43 @@
   transform: scale(0.95);
 }
 
-/* Mobile navbar visibility fix - subtle background fallback for contrast */
+/* Mobile navbar visibility fix - stronger background for contrast */
 @media (max-width: 768px) {
   #main-nav {
-    background: rgba(0, 0, 0, 0.4) !important;
-    background-color: rgba(0, 0, 0, 0.4) !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    background-color: rgba(0, 0, 0, 0.85) !important;
     backdrop-filter: blur(4px) !important;
+  }
+
+  /* Ensure all navbar elements are visible */
+  #main-nav * {
+    color: #ffffff !important;
+  }
+
+  /* Mobile menu button visibility */
+  #mobile-menu-btn {
+    color: #ffffff !important;
+    opacity: 1 !important;
   }
 
   /* Ensure text remains readable on mobile */
   #main-nav a {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    color: #a3a3a3 !important;
+  }
+
+  #main-nav a:hover {
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   }
 
   #main-nav button {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   }
 
   /* Preserve scrolled state styling */
   #main-nav.scrolled {
-    background: rgba(0, 0, 0, 0.5) !important;
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    background-color: rgba(0, 0, 0, 0.95) !important;
   }
 }
