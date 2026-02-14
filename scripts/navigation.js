@@ -97,9 +97,9 @@ function initializeNavbarScrollEffect() {
 function initializeMobileMenu() {
   const btn = document.getElementById("mobile-menu-btn");
   const menu = document.getElementById("mobile-menu");
-  const icon = btn.querySelector("i");
   if (!btn || !menu) return;
 
+  const icon = btn.querySelector("i");
   const mobileLinks = document.querySelectorAll(".mobile-link");
   let isMenuOpen = false;
 
@@ -108,13 +108,17 @@ function initializeMobileMenu() {
     isMenuOpen = !isMenuOpen;
     if (isMenuOpen) {
       menu.classList.remove("hidden");
-      icon.classList.remove("fa-bars");
-      icon.classList.add("fa-times");
+      if (icon) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+      }
       document.body.style.overflow = "hidden";
     } else {
       menu.classList.add("hidden");
-      icon.classList.remove("fa-times");
-      icon.classList.add("fa-bars");
+      if (icon) {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
       document.body.style.overflow = "auto";
     }
   });
@@ -124,8 +128,10 @@ function initializeMobileMenu() {
     link.addEventListener("click", () => {
       isMenuOpen = false;
       menu.classList.add("hidden");
-      icon.classList.remove("fa-times");
-      icon.classList.add("fa-bars");
+      if (icon) {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
       document.body.style.overflow = "auto";
     });
   });

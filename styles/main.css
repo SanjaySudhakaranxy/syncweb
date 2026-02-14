@@ -153,10 +153,15 @@
     display: block !important;
     opacity: 1 !important;
     min-height: 44px !important;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+    transition: color 0.2s ease !important;
   }
 
-  .mobile-link:hover {
+  .mobile-link:hover,
+  .mobile-link:focus {
     color: #a3a3a3 !important;
+    text-decoration: none !important;
   }
 }
 
