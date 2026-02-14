@@ -194,6 +194,15 @@ function initializePageTransitionEffects() {
       const href = link.getAttribute("href");
       if (!href || href.startsWith("#")) return; // Allow hash navigation
 
+      // Prevent page transitions from interfering with mobile menu
+      if (
+        link.closest("#mobile-menu") ||
+        link.closest("#mobile-menu-btn") ||
+        link.classList.contains("mobile-link")
+      ) {
+        return;
+      }
+
       // Handle only same-origin internal navigation
       try {
         const url = new URL(href, window.location.href);
