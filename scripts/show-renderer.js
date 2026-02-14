@@ -38,7 +38,7 @@
     renderMetadata(show);
     renderStory(show);
     renderGallery(show);
-    renderSetlist(show);
+    // Setlist section removed safely
     renderHighlightVideo(show);
     renderNavigation(show);
   }
@@ -150,38 +150,6 @@
         />
       `;
       gallery.appendChild(div);
-    });
-  }
-
-  /**
-   * Setlist / Key Moments
-   */
-  function renderSetlist(show) {
-    const setlist = document.getElementById("setlist-content");
-
-    if (!setlist || !show.setlist) return;
-
-    setlist.innerHTML = "";
-
-    show.setlist.forEach((item) => {
-      const div = document.createElement("div");
-      div.className = `setlist-item py-6 border-b border-neutral-800 ${item.highlight ? "highlight" : ""}`;
-      div.innerHTML = `
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-          <div class="flex-1">
-            <div class="flex items-center gap-4">
-              ${item.highlight ? '<span class="text-xs uppercase tracking-widest text-white bg-white/10 px-2 py-1">Highlight</span>' : ""}
-              <h4 class="font-header text-xl text-white">${item.title}</h4>
-            </div>
-            <p class="text-gray-400 mt-1">${item.description}</p>
-            ${item.artist ? `<p class="text-gray-500 text-sm mt-1">${item.artist}</p>` : ""}
-          </div>
-          <div class="text-gray-500 font-mono text-sm md:text-right">
-            ${item.time}
-          </div>
-        </div>
-      `;
-      setlist.appendChild(div);
     });
   }
 

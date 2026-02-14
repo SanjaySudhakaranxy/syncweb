@@ -68,3 +68,27 @@
 .size-btn:active {
   transform: scale(0.95);
 }
+
+/* Mobile navbar visibility fix - subtle background fallback for contrast */
+@media (max-width: 768px) {
+  #main-nav {
+    background: rgba(0, 0, 0, 0.4) !important;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(4px) !important;
+  }
+
+  /* Ensure text remains readable on mobile */
+  #main-nav a {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  #main-nav button {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Preserve scrolled state styling */
+  #main-nav.scrolled {
+    background: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
+}
