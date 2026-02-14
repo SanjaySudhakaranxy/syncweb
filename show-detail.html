@@ -97,13 +97,15 @@
       </button>
     </nav>
 
-    <!-- Mobile navigation visibility fix -->
-    <!-- Dedicated mobile nav container - NOT inherited from desktop -->
-    <!-- This menu opens/closes via JavaScript's hidden class toggle -->
-    <!-- Links styled to ensure absolute visibility on all mobile devices -->
+    <!-- Mobile navigation final visibility fix -->
+    <!-- Standalone HTML structure - NOT JavaScript-injected -->
+    <!-- Container uses display toggle (hidden class) via navigation.js -->
+    <!-- All 5 navigation links rendered directly in HTML -->
     <div
       id="mobile-menu"
       class="hidden fixed inset-0 bg-black z-[9999] flex flex-col justify-center items-center md:hidden"
+      role="navigation"
+      aria-label="Mobile navigation menu"
     >
       <div
         class="flex flex-col space-y-8 text-center font-header text-3xl tracking-widest text-white opacity-100"
