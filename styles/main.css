@@ -75,10 +75,11 @@
     max-width: 95vw;
   }
 
-  /* Navbar mobile optimization */
+  /* Navbar mobile optimization - increased visibility */
   #main-nav {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-height: 80px;
   }
 
   /* Mobile menu text sizing */
