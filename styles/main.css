@@ -147,21 +147,53 @@
   .card {
     margin-bottom: 0.5rem;
   }
-  /* Mobile menu links - Forced render */
-  .mobile-link {
-    color: #ffffff !important;
-    display: block !important;
-    opacity: 1 !important;
-    min-height: 44px !important;
-    line-height: 1.5 !important;
-    font-weight: 500 !important;
-    transition: color 0.2s ease !important;
-  }
+}
 
-  .mobile-link:hover,
-  .mobile-link:focus {
-    color: #a3a3a3 !important;
-    text-decoration: none !important;
+/* =============================================
+   MOBILE MENU — Force overlay styles
+   Ignores all parents, media queries, Tailwind
+   ============================================= */
+#mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+  display: none;
+}
+
+#mobile-menu.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#mobile-menu .mobile-link {
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  padding: 0.75rem 2rem;
+  min-height: 44px;
+  opacity: 1;
+  transition: color 0.2s ease;
+}
+
+#mobile-menu .mobile-link:hover,
+#mobile-menu .mobile-link:focus {
+  color: #a3a3a3;
+}
+
+/* Hide mobile menu on desktop */
+@media (min-width: 769px) {
+  #mobile-menu {
+    display: none !important;
   }
 }
 

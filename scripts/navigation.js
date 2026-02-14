@@ -93,7 +93,7 @@ function initializeNavbarScrollEffect() {
   });
 }
 
-// Mobile menu toggle functionality - Force render
+// Mobile menu toggle — controls .active class (display:none/flex via CSS)
 function initializeMobileMenu() {
   const btn = document.getElementById("mobile-menu-btn");
   const menu = document.getElementById("mobile-menu");
@@ -103,36 +103,26 @@ function initializeMobileMenu() {
   const mobileLinks = document.querySelectorAll(".mobile-link");
   let isMenuOpen = false;
 
-  // Toggle mobile menu on button click - Use display toggle for forced render
   btn.addEventListener("click", () => {
     isMenuOpen = !isMenuOpen;
-    if (isMenuOpen) {
-      menu.classList.remove("hidden");
-      if (icon) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
-      }
-      document.body.style.overflow = "hidden";
-    } else {
-      menu.classList.add("hidden");
-      if (icon) {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      }
-      document.body.style.overflow = "auto";
+    menu.classList.toggle("active", isMenuOpen);
+    if (icon) {
+      icon.classList.toggle("fa-bars", !isMenuOpen);
+      icon.classList.toggle("fa-times", isMenuOpen);
     }
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
   });
 
   // Close mobile menu when a navigation link is clicked
   mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
       isMenuOpen = false;
-      menu.classList.add("hidden");
+      menu.classList.remove("active");
       if (icon) {
         icon.classList.remove("fa-times");
         icon.classList.add("fa-bars");
       }
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     });
   });
 }
