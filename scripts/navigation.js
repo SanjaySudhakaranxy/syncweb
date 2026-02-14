@@ -98,6 +98,8 @@ function initializeMobileMenu() {
   const btn = document.getElementById("mobile-menu-btn");
   const menu = document.getElementById("mobile-menu");
   const icon = btn.querySelector("i");
+  if (!btn || !menu) return;
+
   const mobileLinks = document.querySelectorAll(".mobile-link");
   let isMenuOpen = false;
 
@@ -135,3 +137,10 @@ window.Navigation = {
   initializeMobileMenu,
   initializeHybridNavigation,
 };
+
+// Initialize on DOM load
+document.addEventListener("DOMContentLoaded", () => {
+  initializeHybridNavigation();
+  initializeNavbarScrollEffect();
+  initializeMobileMenu();
+});

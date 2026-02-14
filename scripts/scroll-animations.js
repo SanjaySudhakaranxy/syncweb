@@ -21,7 +21,17 @@ function initializeScrollAnimations() {
 
   // Observe all fade-in sections
   document.querySelectorAll(".fade-in-section").forEach((section) => {
-    observer.observe(section);
+    // Check if element is already in viewport on load
+    const rect = section.getBoundingClientRect();
+    const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (isInViewport) {
+      // Immediately show elements that are in viewport on load
+      section.classList.add("is-visible");
+    } else {
+      // Observe elements that are not in viewport
+      observer.observe(section);
+    }
   });
 }
 
