@@ -6,12 +6,32 @@
 
 /* Navigation Transition Effects */
 #main-nav {
+  background: transparent !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  position: fixed;
   transition: padding 0.3s ease;
+}
+
+#main-nav::before,
+#main-nav::after {
+  display: none !important;
 }
 
 #main-nav.scrolled {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Ensure navbar children are also transparent */
+#main-nav * {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Hover Underline Animation */

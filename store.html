@@ -34,7 +34,7 @@
     <!-- Navigation -->
     <nav
       id="main-nav"
-      class="fixed w-full z-50 top-0 pt-6 pb-6 px-6 lg:px-12 flex justify-between items-center transition-all duration-300"
+      class="fixed w-full z-50 top-0 pt-3 sm:pt-6 pb-3 sm:pb-6 px-6 lg:px-12 flex justify-between items-center transition-all duration-300"
     >
       <!-- Logo -->
       <a href="index.html" class="z-50">
@@ -100,7 +100,7 @@
       class="fixed inset-0 bg-black z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300"
     >
       <div
-        class="flex flex-col space-y-8 text-center font-header text-3xl tracking-widest"
+        class="flex flex-col space-y-6 sm:space-y-8 text-center font-header text-2xl sm:text-3xl tracking-widest"
       >
         <a href="index.html#about" class="mobile-link hover:text-gray-400"
           >About</a
@@ -115,101 +115,133 @@
     </div>
 
     <!-- Store Content -->
-    <main class="pt-32 pb-24 bg-black min-h-screen">
-      <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <!-- Product Grid -->
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
+    <main
+      class="pt-20 sm:pt-32 pb-16 sm:pb-24 bg-sync-background min-h-screen flex flex-col items-center justify-center"
+    >
+      <!-- Sold Out Message -->
+      <div class="text-center max-w-2xl px-6 py-8 sm:py-12">
+        <h1 class="font-brand text-3xl sm:text-5xl md:text-6xl mb-4 sm:mb-6">
+          Merch Sold Out
+        </h1>
+        <p
+          class="font-body text-sync-text-secondary text-base sm:text-lg md:text-xl"
         >
-          <!-- Product Card 1 -->
-          <div class="product-card group fade-in-section">
-            <!-- Product Image -->
-            <div
-              class="relative aspect-square mb-6 bg-gray-900 rounded-lg overflow-hidden"
-            >
-              <img
-                src="assets/mockup1.png"
-                alt="SYNC Essential Tee"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
+          New drops coming soon.
+        </p>
+        <p class="font-body text-sync-text-secondary text-sm mt-8">
+          Follow us on
+          <a
+            href="https://www.instagram.com/onesound_onespirit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white hover:text-gray-300 transition-colors"
+            >Instagram</a
+          >
+          for updates.
+        </p>
+      </div>
+
+      <!-- Product Grid (Hidden - Kept for reversion) -->
+      <div class="hidden w-full">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+          <!-- Product Grid -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
+          >
+            <!-- Product Card 1 -->
+            <div class="product-card group fade-in-section">
+              <!-- Product Image -->
+              <div
+                class="relative aspect-square mb-6 bg-gray-900 rounded-lg overflow-hidden"
+              >
+                <img
+                  src="assets/mockup1.png"
+                  alt="SYNC Essential Tee"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              <!-- Product Info -->
+              <div class="space-y-3">
+                <h3 class="font-header tracking-widest text-sm">
+                  ESSENTIAL TEE
+                </h3>
+                <p class="font-body text-sm">₹600</p>
+
+                <!-- Color Options -->
+                <div class="flex space-x-2 pt-2">
+                  <div
+                    class="w-4 h-4 bg-black border border-gray-600 rounded-full cursor-pointer hover:border-white transition-colors"
+                  ></div>
+                  <div
+                    class="w-4 h-4 bg-white border border-gray-300 rounded-full cursor-pointer hover:border-gray-500 transition-colors"
+                  ></div>
+                </div>
+              </div>
             </div>
 
-            <!-- Product Info -->
-            <div class="space-y-3">
-              <h3 class="font-header tracking-widest text-sm">ESSENTIAL TEE</h3>
-              <p class="font-body text-sm">₹600</p>
-
-              <!-- Color Options -->
-              <div class="flex space-x-2 pt-2">
+            <!-- Placeholder Cards for Future Products -->
+            <div class="product-card group fade-in-section opacity-30">
+              <div
+                class="relative aspect-square mb-6 bg-gray-900 rounded-lg overflow-hidden"
+              >
                 <div
-                  class="w-4 h-4 bg-black border border-gray-600 rounded-full cursor-pointer hover:border-white transition-colors"
-                ></div>
+                  class="w-full h-full bg-gray-800 flex items-center justify-center"
+                >
+                  <span
+                    class="text-gray-600 text-sm font-header uppercase tracking-widest"
+                    >Coming Soon</span
+                  >
+                </div>
+              </div>
+              <div class="space-y-3">
+                <h3 class="text-gray-600 font-header tracking-widest text-sm">
+                  HOODIE
+                </h3>
+                <p class="text-gray-600 font-body text-sm">₹1200</p>
+              </div>
+            </div>
+
+            <div class="product-card group fade-in-section opacity-30">
+              <div
+                class="relative aspect-square mb-6 bg-gray-900 rounded-lg overflow-hidden"
+              >
                 <div
-                  class="w-4 h-4 bg-white border border-gray-300 rounded-full cursor-pointer hover:border-gray-500 transition-colors"
-                ></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Placeholder Cards for Future Products -->
-          <div class="product-card group fade-in-section opacity-30">
-            <div
-              class="relative aspect-square mb-6 bg-gray-900 rounded-lg overflow-hidden"
-            >
-              <div
-                class="w-full h-full bg-gray-800 flex items-center justify-center"
-              >
-                <span
-                  class="text-gray-600 text-sm font-header uppercase tracking-widest"
-                  >Coming Soon</span
+                  class="w-full h-full bg-gray-800 flex items-center justify-center"
                 >
+                  <span
+                    class="text-gray-600 text-sm font-header tracking-widest"
+                    >Coming Soon</span
+                  >
+                </div>
+              </div>
+              <div class="space-y-3">
+                <h3 class="text-gray-600 font-header tracking-widest text-sm">
+                  BEANIE
+                </h3>
+                <p class="text-gray-600 font-body text-sm">₹400</p>
               </div>
             </div>
-            <div class="space-y-3">
-              <h3 class="text-gray-600 font-header tracking-widest text-sm">
-                HOODIE
-              </h3>
-              <p class="text-gray-600 font-body text-sm">₹1200</p>
-            </div>
-          </div>
 
-          <div class="product-card group fade-in-section opacity-30">
-            <div
-              class="relative aspect-square mb-6 bg-gray-900 rounded-lg overflow-hidden"
-            >
+            <div class="product-card group fade-in-section opacity-30">
               <div
-                class="w-full h-full bg-gray-800 flex items-center justify-center"
+                class="relative aspect-square mb-6 bg-gray-900 rounded-lg overflow-hidden"
               >
-                <span class="text-gray-600 text-sm font-header tracking-widest"
-                  >Coming Soon</span
+                <div
+                  class="w-full h-full bg-gray-800 flex items-center justify-center"
                 >
+                  <span
+                    class="text-gray-600 text-sm font-header tracking-widest"
+                    >Coming Soon</span
+                  >
+                </div>
               </div>
-            </div>
-            <div class="space-y-3">
-              <h3 class="text-gray-600 font-header tracking-widest text-sm">
-                BEANIE
-              </h3>
-              <p class="text-gray-600 font-body text-sm">₹400</p>
-            </div>
-          </div>
-
-          <div class="product-card group fade-in-section opacity-30">
-            <div
-              class="relative aspect-square mb-6 bg-gray-900 rounded-lg overflow-hidden"
-            >
-              <div
-                class="w-full h-full bg-gray-800 flex items-center justify-center"
-              >
-                <span class="text-gray-600 text-sm font-header tracking-widest"
-                  >Coming Soon</span
-                >
+              <div class="space-y-3">
+                <h3 class="text-gray-600 font-header tracking-widest text-sm">
+                  LONGSLEEVE
+                </h3>
+                <p class="text-gray-600 font-body text-sm">₹800</p>
               </div>
-            </div>
-            <div class="space-y-3">
-              <h3 class="text-gray-600 font-header tracking-widest text-sm">
-                LONGSLEEVE
-              </h3>
-              <p class="text-gray-600 font-body text-sm">₹800</p>
             </div>
           </div>
         </div>

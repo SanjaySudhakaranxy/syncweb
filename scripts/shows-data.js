@@ -31,7 +31,7 @@ const SHOWS_DATA = {
     story: {
       headline: "THE NIGHT",
       paragraphs: [
-        "They came in slowly at first — groups talking quietly, some standing alone, some carrying expectations they couldn't quite explain. The sky was settling into darkness, and there was a stillness in the air, as if the night itself was waiting.",
+        "They came in slowly at first  groups talking quietly, some standing alone, some carrying expectations they couldn't quite explain. The sky was settling into darkness, and there was a stillness in the air, as if the night itself was waiting.",
         "When the lights came on, it wasn't noise that filled the space — it was attention.",
         "As Levites stepped onto the stage, something shifted. The songs weren't rushed. The moments weren't forced. Voices rose, hands lifted, and without anyone asking, the crowd moved together. Worship didn't feel like a performance; it felt like a response.",
         "Under the open night sky, the altar was no longer a structure — it was a gathering of surrendered hearts.",

@@ -144,3 +144,72 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeNavbarScrollEffect();
   initializeMobileMenu();
 });
+
+/**
+ * Ultra-smooth page transition effects
+ * - GPU-accelerated fade + translateY
+ * - Respects prefers-reduced-motion
+ * - Non-destructive: preserves all routing logic
+ * - 250ms duration for zero-lag feel
+ */
+function initializePageTransitionEffects() {
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  )
+    return;
+
+  const body = document.body;
+  if (!body) return;
+
+  // Add transition class and start with enter state
+  body.classList.add("page-transition", "page-enter");
+
+  // Trigger enter animation on next frame (GPU-accelerated)
+  requestAnimationFrame(() => {
+    body.classList.remove("page-enter");
+  });
+
+  // Intercept internal navigation for smooth exit transitions
+  document.addEventListener(
+    "click",
+    (e) => {
+      const link = e.target.closest("a");
+      if (!link) return;
+
+      // Skip external links, downloads, and no-transition links
+      if (
+        link.target === "_blank" ||
+        link.hasAttribute("download") ||
+        link.hasAttribute("data-no-transition")
+      )
+        return;
+
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#")) return; // Allow hash navigation
+
+      // Handle only same-origin internal navigation
+      try {
+        const url = new URL(href, window.location.href);
+        if (url.origin !== window.location.origin) return;
+
+        e.preventDefault();
+        body.classList.add("page-exit");
+
+        // Navigate after exit animation (matches CSS duration)
+        setTimeout(() => {
+          window.location.href = url.href;
+        }, 250);
+      } catch (err) {
+        // Fallback to default navigation on URL parsing errors
+        return;
+      }
+    },
+    { passive: false },
+  );
+}
+
+// Initialize transition effects safely after other nav inits
+document.addEventListener("DOMContentLoaded", () => {
+  initializePageTransitionEffects();
+});
