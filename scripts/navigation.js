@@ -103,6 +103,16 @@ function initializeMobileMenu() {
   const mobileLinks = document.querySelectorAll(".mobile-link");
   let isMenuOpen = false;
 
+  function closeMenu() {
+    isMenuOpen = false;
+    menu.classList.remove("active");
+    if (icon) {
+      icon.classList.remove("fa-times");
+      icon.classList.add("fa-bars");
+    }
+    document.body.style.overflow = "";
+  }
+
   btn.addEventListener("click", () => {
     isMenuOpen = !isMenuOpen;
     menu.classList.toggle("active", isMenuOpen);
@@ -113,16 +123,22 @@ function initializeMobileMenu() {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
   });
 
+  // Close menu when clicking the close button area (top-right)
+  menu.addEventListener("click", (e) => {
+    const rect = menu.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Check if click is in top-right close button area (64px x 64px)
+    if (x > rect.width - 64 && y < 64) {
+      closeMenu();
+    }
+  });
+
   // Close mobile menu when a navigation link is clicked
   mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      isMenuOpen = false;
-      menu.classList.remove("active");
-      if (icon) {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      }
-      document.body.style.overflow = "";
+      closeMenu();
     });
   });
 }
