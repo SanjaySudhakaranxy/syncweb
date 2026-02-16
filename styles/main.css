@@ -162,49 +162,59 @@
 }
 
 #mobile-menu.active {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  background: #000000 !important;
+  padding: 2rem !important;
 }
 
 /* Close button at top-right of mobile menu */
 #mobile-menu::before {
   content: "✕";
   position: absolute;
-  top: 2rem;
-  right: 2rem;
-  color: #ffffff;
-  font-size: 2rem;
+  top: 1rem;
+  right: 1rem;
+  color: #ffffff !important;
+  font-size: 2rem !important;
   cursor: pointer;
-  z-index: 10000;
+  z-index: 10002 !important;
   width: 44px;
   height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 50%;
+  font-weight: 300;
 }
 
 #mobile-menu .mobile-link {
-  color: #ffffff;
-  font-family: "Oswald", sans-serif;
-  font-size: 1.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  text-decoration: none;
-  text-align: center;
-  display: block;
-  padding: 0.75rem 2rem;
-  min-height: 44px;
-  opacity: 1;
-  transition: color 0.2s ease;
+  color: #ffffff !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 1.75rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  display: block !important;
+  padding: 0.75rem 2rem !important;
+  min-height: 44px !important;
+  opacity: 1 !important;
+  transition: color 0.2s ease !important;
+  background: none !important;
+  border: none !important;
+  z-index: 10001 !important;
+  position: relative !important;
 }
 
 #mobile-menu .mobile-link:hover,
 #mobile-menu .mobile-link:focus {
-  color: #a3a3a3;
+  color: #a3a3a3 !important;
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Ensure mobile menu button is visible */
