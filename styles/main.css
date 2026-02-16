@@ -159,6 +159,9 @@
   z-index: 9999;
   background: #000;
   display: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #mobile-menu.active {
@@ -169,6 +172,8 @@
   gap: 2rem !important;
   background: #000000 !important;
   padding: 2rem !important;
+  width: 100vw !important;
+  height: 100vh !important;
 }
 
 /* Close button at top-right of mobile menu */
@@ -200,15 +205,14 @@
   letter-spacing: 0.15em !important;
   text-decoration: none !important;
   text-align: center !important;
-  display: block !important;
+  display: inline-block !important;
   padding: 0.75rem 2rem !important;
   min-height: 44px !important;
   opacity: 1 !important;
   transition: color 0.2s ease !important;
   background: none !important;
   border: none !important;
-  z-index: 10001 !important;
-  position: relative !important;
+  flex-shrink: 0 !important;
 }
 
 #mobile-menu .mobile-link:hover,
