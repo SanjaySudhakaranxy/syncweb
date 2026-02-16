@@ -131,6 +131,12 @@ function initializeMobileMenu() {
 
     // Check if click is in top-right close button area (60px from each edge)
     if (x > rect.width - 60 && y < 60) {
+      closeMenu();
+    }
+  });
+
+  // Close mobile menu when a navigation link is clicked
+  mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
       closeMenu();
     });
